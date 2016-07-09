@@ -329,7 +329,7 @@ namespace Newtonsoft.Json.Serialization
                                 serializableMembers.Add(member);
                             }
 #endif
-                            else if (memberSerialization == MemberSerialization.Fields && member.MemberType() == MemberTypes.Field)
+                            else if (memberSerialization == MemberSerialization.Fields && member.MemberType() == Utilities.MemberTypes.Field)
                             {
                                 serializableMembers.Add(member);
                             }
@@ -462,8 +462,8 @@ namespace Newtonsoft.Json.Serialization
 
             MemberInfo extensionDataMember = members.LastOrDefault(m =>
             {
-                MemberTypes memberType = m.MemberType();
-                if (memberType != MemberTypes.Property && memberType != MemberTypes.Field)
+                Utilities.MemberTypes memberType = m.MemberType();
+                if (memberType != Utilities.MemberTypes.Property && memberType != Utilities.MemberTypes.Field)
                 {
                     return false;
                 }
